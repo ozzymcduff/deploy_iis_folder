@@ -1,4 +1,6 @@
-﻿using NDesk.Options;
+﻿using System;
+using System.IO;
+using NDesk.Options;
 
 namespace deploy
 {
@@ -13,9 +15,28 @@ namespace deploy
    	            { "f|from=",  v => @from=v },
                 { "n|sitename=",  v => siteName=v },
             };
+
             p.Parse(args);
-            var d = new Deploy(folder, @from, siteName);
-            d.Do();
+            if (string.IsNullOrEmpty(folder) || string.IsNullOrEmpty(@from) || string.IsNullOrEmpty(siteName))
+            {
+                p.WriteOptionDescriptions(Console.Out);
+                return;
+            }
+            try
+            {
+                var d = new Deploy(folder, @from, siteName);
+                d.Do();
+            }
+            catch (DirectoryNotFoundException direx)
+            {
+                Console.Error.WriteLine(direx.Message);
+                Environment.Exit(1);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex);
+                Environment.Exit(1);
+            }
         }
     }
 }
