@@ -52,6 +52,11 @@ namespace deploy
                 site.Applications.MoveSingleToPath(rdir);
                 iisManager.CommitChanges();
             }
+            else
+            {
+                Console.Error.WriteLine("You need to add the site with {0} to IIS", _siteName);
+                Environment.Exit(1);
+            }
         }
 
         private void DeployFiles(string rdir)

@@ -11,8 +11,8 @@ namespace deploy
             string folder = null, @from = null, siteName = null;
             var p = new OptionSet
             {
-   	            { "p|path=",      v => folder = v },
-   	            { "f|from=",  v => @from=v },
+                { "f|from=",  v => @from=v },
+                { "p|path=",      v => folder = v },
                 { "n|sitename=",  v => siteName=v },
             };
 
