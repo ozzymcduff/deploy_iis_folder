@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using deploy;
+using DeployIISFolder;
 
 namespace tests
 {

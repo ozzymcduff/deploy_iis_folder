@@ -1,38 +1,39 @@
 using System;
 using System.IO;
 using Microsoft.Web.Administration;
+using DeployIISFolder;
 
 namespace deploy
 {
     public class Deploy
     {
-        public Deploy(string folder, string @from, string siteName)
+        public Deploy(string targetFolder, string @from, string siteName)
         {
-            _folder = folder;
+            _targetFolder = targetFolder;
             _from = @from;
             _siteName = siteName;
         }
 
-        private readonly string _folder;
+        private readonly string _targetFolder;
         private readonly string _from;
         private readonly string _siteName;
 
         public void CleanupOldDirectories()
         {
-            var dirs = Directory.GetDirectories(_folder);
+            var dirs = Directory.GetDirectories(_targetFolder);
 
             var outOfDate = VersionFolders.OutOfDateDirectories(dirs, 4);
             outOfDate.Each(d =>
                                {
                                    Console.WriteLine("removing " + d);
-                                   Directory.Delete(Path.Combine(_folder, d), true);
+                                   Directory.Delete(Path.Combine(_targetFolder, d), true);
                                });
         }
         public string GetNextFolder()
         {
-            var dirs = Directory.GetDirectories(_folder);
+            var dirs = Directory.GetDirectories(_targetFolder);
             var v = VersionFolders.GetVersionFromDirectories(dirs);
-            return Path.Combine(_folder, "r_" + (v + 1));
+            return Path.Combine(_targetFolder, "r_" + (v + 1));
         }
 
         public void Do()

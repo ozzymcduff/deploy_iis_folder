@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace deploy
+namespace DeployIISFolder
 {
     public static class DirectoryInfoExtensions
     {

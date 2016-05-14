@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.Web.Administration;
 
-namespace deploy
+namespace DeployIISFolder
 {
     public static class ServerManagerExtensions
     {
