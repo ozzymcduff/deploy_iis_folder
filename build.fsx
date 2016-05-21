@@ -66,34 +66,15 @@ Target "test" (fun _ ->
             OutputFile = "TestResults.xml" })
 )
 
-
-Target "pack" (fun _ ->
-    Paket.Pack(fun p -> 
-        { p with
-            OutputPath = "bin"})
-)
-
-Target "push" (fun _ ->
-    Paket.Push(fun p -> 
-        { p with
-            WorkingDir = "bin" })
-)
-
-
 // --------------------------------------------------------------------------------------
 // Run all targets by default. Invoke 'build <Target>' to override
 
 Target "all" DoNothing
-"clean"
-  ==> "pack"
 
 "clean"
   ==> "build"
   ==> "CopyBinaries"
   ==> "test"
   ==> "all"
-
-"pack"
-  ==> "push"
 
 RunTargetOrDefault "test"
