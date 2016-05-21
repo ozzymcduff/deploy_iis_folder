@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\src\deploy_iis_folder\tests\bin\Release\tests.dll" total="11" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2016-05-21" time="19:35:59">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8689" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\src\deploy_iis_folder" machine-name="DESKTOP-1S6V87C" user="mathieu" user-domain="DESKTOP-1S6V87C" />
+  <culture-info current-culture="sv-SE" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\src\deploy_iis_folder\tests\bin\Release\tests.dll" executed="True" result="Success" success="True" time="0.264" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="0.256" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="CanParseHostsFile" executed="True" result="Success" success="True" time="0.214" asserts="0">
+            <results>
+              <test-case name="tests.CanParseHostsFile.Can_parse_multiple_lines" executed="True" result="Success" success="True" time="0.149" asserts="1" />
+              <test-suite type="ParameterizedTest" name="Can_parse_single_line" executed="True" result="Success" success="True" time="0.023" asserts="0">
+                <results>
+                  <test-case name="tests.CanParseHostsFile.Can_parse_single_line(&quot;102.54.94.97     rhino.acme.com&quot;,&quot;102.54.94.97&quot;,&quot;rhino.acme.com&quot;)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="tests.CanParseHostsFile.Can_parse_single_line(&quot;38.25.63.10     x.acme.com&quot;,&quot;38.25.63.10&quot;,&quot;x.acme.com&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="tests.CanParseHostsFile.Can_parse_single_line(&quot;127.0.0.1       localhost&quot;,&quot;127.0.0.1&quot;,&quot;localhost&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="tests.CanParseHostsFile.Can_parse_single_line(&quot;::1             localhost&quot;,&quot;::1&quot;,&quot;localhost&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+              <test-case name="tests.CanParseHostsFile.Wont_include_comments" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="DeployTests" executed="True" result="Success" success="True" time="0.040" asserts="0">
+            <results>
+              <test-case name="tests.DeployTests.Can_get_version_from_directories" executed="True" result="Success" success="True" time="0.011" asserts="1" />
+              <test-case name="tests.DeployTests.Can_get_version_from_directories_when_empty" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="tests.DeployTests.Can_get_version_from_directories_when_only_initial" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="tests.DeployTests.Can_get_versions_to_delete" executed="True" result="Success" success="True" time="0.012" asserts="2" />
+              <test-case name="tests.DeployTests.Should_parse_folders" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
