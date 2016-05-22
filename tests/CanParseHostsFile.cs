@@ -1,5 +1,4 @@
-﻿using DeployIISFolder;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace tests
 {
@@ -15,7 +14,7 @@ namespace tests
         public void Can_parse_single_line(string line, string ip, string host)
         {
             var hosts = HostFile.Parse(line);
-            hosts.Entries.Should(Be.EquivalentTo(new[] { new HostFile.Entry(ip: ip, host: host) }));
+            hosts.Should(Be.EquivalentTo(new[] { new HostFile.Entry(ip: ip, host: host) }));
         }
 
         [Test]
@@ -28,7 +27,7 @@ namespace tests
 ::1             localhost
 ";
             var hosts = HostFile.Parse(lines);
-            hosts.Entries.Should(Be.EquivalentTo(new[] {
+            hosts.Should(Be.EquivalentTo(new[] {
                 new HostFile.Entry("102.54.94.97", "rhino.acme.com"),
                 new HostFile.Entry("38.25.63.10", "x.acme.com"),
                 new HostFile.Entry("127.0.0.1", "localhost"),
@@ -49,7 +48,7 @@ namespace tests
 # ::1             localhost
 ";
             var hosts = HostFile.Parse(lines);
-            hosts.Entries.Should(Be.EquivalentTo(new[] {
+            hosts.Should(Be.EquivalentTo(new[] {
                 new HostFile.Entry("102.54.94.97", "rhino.acme.com"),
                 new HostFile.Entry("38.25.63.10", "x.acme.com"),
                 new HostFile.Entry("127.0.0.1", "localhost")

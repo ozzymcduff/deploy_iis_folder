@@ -3,9 +3,10 @@
 #load "HostFile.fs"
 #r "Microsoft.Web.Administration"
 #load "ServerManager.fs"
-open CoreFs
+#load "VersionFromFolders.fs"
+#load "Directories.fs"
 
 // Define your library scripting code here
 
 HostFile.ensureHostNameBoundToLocalhost "hostname.com"
-ServerManager.createSiteWithHostName "sitename" "hostname.com" "/dir"
+ServerManager.createSiteWithHostName {Name="sitename";Host= "hostname.com";Folder= "/dir"}

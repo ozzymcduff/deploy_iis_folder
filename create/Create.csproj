@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,9 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\core\Core.csproj">
-      <Project>{1f5408c2-2810-4ffa-8eed-6fc842078102}</Project>
-      <Name>Core</Name>
+    <ProjectReference Include="..\CoreFs\DeployIISFolder.fsproj">
+      <Project>{3f88e018-2437-4f01-9d3b-fcc243af9878}</Project>
+      <Name>DeployIISFolder</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

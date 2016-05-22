@@ -8,11 +8,12 @@
     <ProjectGuid>3f88e018-2437-4f01-9d3b-fcc243af9878</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>CoreFs</RootNamespace>
-    <AssemblyName>CoreFs</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AssemblyName>DeployIISFolder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>CoreFs</Name>
+    <Name>DeployIISFolder</Name>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +53,8 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="HostFile.fs" />
     <Compile Include="ServerManager.fs" />
+    <Compile Include="VersionFromFolders.fs" />
+    <Compile Include="Directories.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <PropertyGroup>

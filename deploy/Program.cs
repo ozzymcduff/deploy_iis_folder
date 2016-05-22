@@ -24,13 +24,10 @@ namespace deploy
             }
             try
             {
-                var d = new Deploy(folder, @from, siteName);
-                d.Do();
-            }
-            catch (DirectoryNotFoundException direx)
-            {
-                Console.Error.WriteLine(direx.Message);
-                Environment.Exit(1);
+                var rdir = VersionFromFolders.GetNextFolder(folder);
+                Directories.CopyDirectory(new DirectoryInfo(@from), new DirectoryInfo(rdir));
+                ServerManager.MoveSiteWithName(siteName, rdir);
+                VersionFromFolders.CleanupOldDirectories(folder, 4);
             }
             catch (Exception ex)
             {

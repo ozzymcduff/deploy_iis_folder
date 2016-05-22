@@ -47,15 +47,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HostFile.AddEntry.cs" />
-    <Compile Include="DirectoryInfoExtensions.cs" />
-    <Compile Include="HostFile.Entry.cs" />
     <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="HostFile.cs" />
-    <Compile Include="HostFile.Parse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerManagerExtensions.cs" />
-    <Compile Include="VersionFolders.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

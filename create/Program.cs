@@ -23,8 +23,12 @@ namespace create
             }
             try
             {
-                var c = new Create(folder, hostname, siteName);
-                c.Do();
+                HostFile.EnsureHostNameBoundToLocalhost(hostname);
+                ServerManager.CreateSiteWithHostName(new ServerManager.SiteWithHostName(
+                    name: siteName,
+                    host: hostname,
+                    folder: folder
+                ));
             }
             catch (Exception ex)
             {
